@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  
+  .bigbox{
+      background-color: rgb(5, 1, 1);
+       border: solid 5px green;
+       max-width: 700px;
+      
+       margin: auto;
+        
+       margin-top: 25vh;
+     
+       display: flex;
+       flex-wrap: wrap;
+      padding: 10%;
+    
+      
+  
+   
+  }
+  
+
+  
+  .smallbox{
+      background-color: rgb(255, 255, 255);
+      border: solid 1px red;
+      width: 40%;
+      height: 150px;
+     
+      
+    
+  }
+  
+  .grey{
+    
+      background-color: grey;
+      border-radius: 0 20%;
+    
+  }
+  
+  .blue{
+      background-color: blue;
+      border-radius:20% 0;
+    
+  }
+  
+  .yellow{
+      
+      background-color: yellow;
+      border-radius: 20% 0;
+    
+  
+  }
+  
+  .green{
+      background-color: green;
+      border-radius: 0 20%;
+      
+  }
