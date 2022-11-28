@@ -1,10 +1,12 @@
 <?php
+
 require_once("./roulette2.php");
 
 
 // testIsNumberBetween0and36();
 
 /* test randomnum function */
+
 
 function testIsNumberBetween0and36(): bool
 {
@@ -21,44 +23,46 @@ echo testIsNumberBetween0and36() ?
 
 function testIsOdd(): bool
 {
-   $valEven = [4, 6, 8, 10,62,68,70];
-   $valOdd = [3, 5, 7, 9, 13,17];
-   $valEvenStr=count($valEven);
-   $valOddStr =count($valOdd);
-   $testIsOkay=true;
+   $valEven = [4, 6, 8, 10, 62, 68, 70];
+   $valOdd = [3, 5, 7, 9, 13, 17];
+   $valEvenStr = count($valEven);
+   $valOddStr = count($valOdd);
+   $testIsOkay = true;
 
    for ($i = 0; $i < $valEvenStr; $i++) {
-        $resEven=0;
-     
-         $res[$i] = isOdd($valEven[$i]);
-       //  $resEven =+ intval($res[$i]);
-         $resEven = $res[$i]=== false;       
+
+
+      $res[$i] = isOdd($valEven[$i]);
+
+      //  $resEven =+ intval($res[$i]);
+
+      $resEven = $res[$i] === false;
    }
 
    var_dump($resEven);
 
 
    for ($i = 0; $i < $valOddStr; $i++) {
-          $resOdd=0;
-      
-          $res1[$i]= isOdd($valOdd[$i]);
 
-          $resOdd = $testIsOkay && $res1[$i];
-   
-       //   $resOdd =+ intval($res1[$i]);
 
-       //   var_dump($res1[$i]);
-         
-          
-   } 
+      $res1[$i] = isOdd($valOdd[$i]);
+
+      $resOdd = $testIsOkay && $res1[$i];
+
+      //   $resOdd =+ intval($res1[$i]);
+
+      //   var_dump($res1[$i]);
+
+
+   }
 
    var_dump($resOdd);
-   
 
 
 
-   
-   return $resEven===true && $resOdd === true;
+
+
+   return $resEven === true && $resOdd === true;
 }
 echo testIsOdd() ? "isOdd okay" . "\n" : "isOdd pas bon" . "\n";
 
@@ -95,18 +99,18 @@ echo test_user_input_number() ? "userinputnumber function is okay" : "userinputn
 
 function test_can_get_user_parity_bet_input(): bool
 {
-    // Exemple de données récupérées depuis
-    // la ligne de commande.
-    // ici ex: `php test_roulette.php 13 pair 100`
-    $argvExample = [
-        "test_roulette.php", // nom du script
-        "13", // argument1 en ligne de commande
-        "pair", // arguement2 en cli
-        "100", // argument3 en ligne de commande
-    ];
-    $userInput = getUserParityBetInput($argvExample);
+   // Exemple de données récupérées depuis
+   // la ligne de commande.
+   // ici ex: `php test_roulette.php 13 pair 100`
+   $argvExample = [
+      "test_roulette.php", // nom du script
+      "13", // argument1 en ligne de commande
+      "pair", // arguement2 en cli
+      "100", // argument3 en ligne de commande
+   ];
+   $userInput = getUserParityBetInput($argvExample);
 
-    return $userInput === 'pair';
+   return $userInput === 'pair';
 }
 
 
