@@ -11,10 +11,10 @@ function draw_card()
 /* define card's value */
 function card_value($value)
 {
-    return gettype($value) === "string" ? 10 : $value;
-}
-$refNum = draw_card();
 
+    return gettype($value) === "string" ? 10 : $value;
+   
+}
 
 /* sum the card's value */
 
@@ -26,40 +26,68 @@ function calculate_card_sum($card1, $card2)
 }
 
 /* le sum value de le player */
-$drawPlayerCard1 = card_value($refNum);
-$drawPlayerCard2 = card_value($refNum);
-$drawPlayerCard3 = card_value($refNum);
+$drawPlayerCard1 = card_value(draw_card());
+$drawPlayerCard2 = card_value(draw_card());
+$drawPlayerCard3 = card_value(draw_card());
 $sumPlayerValue = calculate_card_sum($drawPlayerCard1, $drawPlayerCard2);
 
+
+
 /* le sum value de le bank*/
-$drawBankCard1 = card_value($refNum);
-$drawBankCard2 = card_value($refNum);
-$drawBankCard3 = card_value($refNum);
+$drawBankCard1 = card_value(draw_card());
+$drawBankCard2 = card_value(draw_card());
+$drawBankCard3 = card_value(draw_card());
 $sumBankValue = calculate_card_sum($drawBankCard1, $drawBankCard2);
 
 
 /*comparer les value entre le play and le bank pour savoir qui sera gagner */
-function guess_winner($userScore, $bankScore, $playerCard3, $bankCard3)
+function guess_winner($userScore, $bankScore,)
 {
-    if ($userScore < 12) {
-        $userScore = $userScore + $playerCard3;
-        $bankScore = $bankScore + $bankCard3;
-    };
+    // if ($userScore < 17) {
+    //     $userScore = $userScore + $playerCard3;
+    //     $bankScore = $bankScore + $bankCard3;
+    // };
 
-    if ($userScore > $bankScore) {
-        return $userScore;
-    } else if ($userScore < $bankScore) {
-        return $bankScore;
+    if ($userScore> $bankScore || $userScore < 21 && $bankScore> 21){
+        return true;
     } else {
-        return "same";
+        return false;
     }
 }
-guess_winner($sumPlayerValue, $sumBankValue, $drawPlayerCard3, $drawBankCard3);
+guess_winner($sumPlayerValue, $sumBankValue);
 
 
 
+/*calculate the tax rate */
+// function taxRate($euro){
+
+//     switch($euro){
+//     case $euro>10:
+//        return  $price = $euro * 0.2+$euro;
+//        break;
+//     case $euro>0&& $euro<10:
+//        return  $price = $euro *0.05 +$euro;
+//        break;
+//     case $euro<0:
+//         echo 'error';
+//         break;
+// }
+ 
+// }
+
+// /*calculate the age from birthday */
+// function age($birthdayYear){
+//     $today=date('Y');
+//     $age = $today - $birthdayYear;
+//     return $age;
+// }
+
+// /* transfere money between two acounts */
+// function transfereBetweenAccount($aplayerAccount,$bplayerAccount,$money){
+      
 
 
+// }
 
 
 

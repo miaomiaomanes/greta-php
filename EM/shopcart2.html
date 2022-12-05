@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    li {
+      list-style: none;
+    }
+    h1 {
+      text-align: center;
+      background-color: aqua;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 20%);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
+
+    .produitbox {
+      border: 5px solid green;
+      width: 250px;
+      padding: 1rem;
+    }
+
+    li {
+      font-size: 30px;
+    }
+
+    .panier {
+      border: 5px solid green;
+    }
+
+    .panierbox {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding-left: 0;
+    }
+
+    .panierbox li {
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <header>shoping in the miaomiao site</header>
+    <h1>produits</h1>
+    <main>
+      <ul class="produitbox">
+        <li>produit: <span id="banana">banana</span></li>
+        <li>price: <span id="bananaPrice">10</span> euro</li>
+        <hr />
+        <button onclick="addBanana('#banana','#bananaPrice')">ajouter</button>
+      </ul>
+
+      <ul class="produitbox">
+        <li>produit: <span id="apple">apple</span></li>
+        <li>price: <span id="applePrice">20</span> euro</li>
+        <hr />
+        <button onclick="addApple('#apple', '#applePrice')">ajouter</button>
+      </ul>
+
+      <ul class="produitbox">
+        <li>produit:<span id="peer">peer</span></li>
+        <li>price: <span id="peerPrice">15</span> euro</li>
+        <hr />
+        <button onclick="addPeer('#peer', '#peerPrice')">ajouter</button>
+      </ul>
+      <ul class="produitbox">
+        <li>produit:<span id="orange">orange</span></li>
+        <li>price: <span id="orangePrice">5</span> euro</li>
+        <hr />
+        <button onclick="addOrange('#orange', '#orangePrice')">ajouter</button>
+      </ul>
+
+      <div class="panier">
+        <h2>panier</h2>
+        <ul class="panierbox">
+          <li id="produitName">name</li>
+          <li id="produitPrice">price</li>
+          <li id="produitQuantity">quality</li>
+        </ul>
+
+        <hr />
+        <h2> total:<span id="totalPrice"></span></span></h2>
+      </div>
+    </main>
+  </body>
+  <script src="./shopCart2.js"></script>
+</html>

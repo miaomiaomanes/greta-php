@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .modal {
+      display: block;
+      position: absolute;
+      padding: 10px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      border: 5px solid blueviolet;
+      width: 80%;
+    }
+  </style>
+
+  <body>
+    <textarea
+      name="textbox"
+      id="textbox"
+      cols="30"
+      rows="10"
+      onkeyup="text('#textbox','#addtext')"
+    >
+    </textarea>
+    <br />
+    <span>affiche text:</span>
+    <p id="addtext"></p>
+
+    <form action="" method="get" onsubmit="login();">
+      <input type="email" name="email" id="email" /> <br />
+
+      <input type="password" name="mdp" id="mdp" /><br />
+
+      <button type="submit">login in</button>
+    </form>
+
+    <div class="modal">
+      <div class="modalContent">mm</div>
+      <hr>
+      <div style="text-align: right">
+        <button onclick="modal('close')">fermer</button>
+      </div>
+    </div>
+    affcihe text:
+    <p id="afficheText"></p>
+
+    <p>0</p>
+    <p
+      id="demo"
+      style="color: red; font-size: 20px; background-color: aquamarine"
+    >
+      This is a paragraph.
+    </p>
+    <div
+      id="appear"
+      style="background-color: red; width: 100px; height: 100px; display: none"
+    >
+      get out inscription
+      <button onClick="appear('close')">close</button>
+    </div>
+
+    <button onClick="add()">+</button>
+    <button onClick="remove()">-</button>
+    <button onClick="appear('open')">open</button>
+
+    <button
+      style="
+        color: red;
+        font-size: 100px;
+        border-radius: 100%;
+        border: 5px solid greenyellow;
+      "
+      onClick="ChangeSize('plus')"
+    >
+      A+
+    </button>
+    <button
+      style="color: red; font-size: 100px; border-radius: 50%"
+      onClick="ChangeSize('moins')"
+    >
+      A-
+    </button>
+
+    <button id="changecolor" onClick="changeBg()">change color</button>
+
+    <script>
+      var num = 0;
+      var size = 20;
+
+      function add() {
+        num++;
+        var x = document.querySelector("p");
+        x.innerText = num;
+      }
+
+      function remove() {
+        num--;
+        var x = document.querySelector("p");
+        x.innerText = num;
+      }
+
+      function ChangeSize(option) {
+        option == "plus" ? (size += 4) : (size -= 4);
+
+        var x = document.querySelector("#demo");
+        x.style.fontSize = size + "px";
+
+        if (size > 50 && size < 80) {
+          x.style.backgroundColor = "green";
+        } else if (size >= 80) {
+          x.style.backgroundColor = "yellow";
+        } else {
+          x.style.backgroundColor = "aquamarine";
+        }
+      }
+
+      function changeBg() {
+        var x = document.querySelector("#changecolor");
+      }
+
+      function appear(option) {
+        var x = document.querySelector("#appear");
+        x.style.display = "block";
+        option == "open"
+          ? (x.style.display = "block")
+          : (x.style.display = "none");
+      }
+
+      function text(getValue, setValue) {
+        var x = document.querySelector(getValue);
+        var y = document.querySelector(setValue);
+        y.innerHTML = x.value;
+      }
+
+      function modal(option) {
+        option == "open"
+          ? (document.querySelector(".modal").style.display = "block")
+          : (document.querySelector(".modal").style.display = "none");
+      }
+
+      function isUser(getValue1, getValue2, setValue) {
+        var email = "test@test.com";
+        var mdp = 1234;
+        var getEmail = document.querySelector(getValue1);
+        var getMdp = document.querySelector(getValue2);
+        var afficheText = document.querySelector(setValue);
+
+        getEmail.value == email && getMdp.value == mdp
+          ? (afficheText.innerHTML = "connexion ok")
+          : (afficheText.innerHTML = "email ou mdp incorrect");
+      }
+
+      function login() {
+        var email = "test@test.com";
+        var mdp = 1234;
+        var getEmail = document.querySelector("#email");
+        var getMdp = document.querySelector("#mdp");
+        var modalContent = Document.querySelector(".modalContent");
+        var modal = Document.querySelector(".modal");
+
+        if (getEmail.value == email && getMdp.value == mdp) {
+          modal("open");
+          modalContent.innerHTML = "contextion okay";
+          modal.style.backgroundColor = "green";
+        } else {
+          modal("open");
+          modalContent.innerHTML = "contextion is not okay";
+          modal.style.backgroundColor = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

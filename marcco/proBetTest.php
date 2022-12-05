@@ -25,13 +25,16 @@ function test_can_draw_card(): bool
 function test_can_get_card_value()
 
 {
+    $testIsOk = true;
     $cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'V', 'D', 'R'];
-    $cardValue1 = card_value($cards[10]);
-    $cardValue2 = card_value($cards[12]);
+    $cardsRes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 
-    // foreach($cards as $i )
 
-    return $cardValue1 === 10 && $cardValue2 === 10;
+    for ($i = 0; $i < count($cards); $i++) {
+        $res = $cardsRes[$i] === card_value($cards[$i]);
+        $testValue = $res && $testIsOk;
+    }
+    return $testValue === true;
 }
 
 /**
@@ -51,10 +54,10 @@ function test_can_calculate_card_sum()
  */
 function test_can_guess_winner()
 {
-    $winner1 = guess_winner(19, 18, 5, 7);
-    $winner2 = guess_winner(11, 18, 5, 7);
-    $winner3 = guess_winner(11, 18, 8, 1);
-    return $winner1 === 19 && $winner2 === 25 && $winner3 === "same";
+    $winner1 = guess_winner(19, 18);
+    $winner2 = guess_winner(22, 18, );
+    $winner3 = guess_winner(11, 18);
+    return $winner1 === true && $winner2 === false && $winner3 === false;
 }
 
 $koString = "\033[31m❌\033[0m\n";

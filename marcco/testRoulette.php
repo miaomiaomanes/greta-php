@@ -36,7 +36,8 @@ function testIsOdd(): bool
 
       //  $resEven =+ intval($res[$i]);
 
-      $resEven = $res[$i] === false;
+      $resTest = $res[$i] === false;
+      $resEven = $resTest && $testIsOkay;
    }
 
    var_dump($resEven);

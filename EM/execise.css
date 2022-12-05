@@ -52,3 +52,46 @@
     border-radius: 0 20%;
     margin-bottom: 5%;
 }
+
+
+
+/* background photos */
+
+.bigbgimg{
+    background: linear-gradient(
+        45deg,
+        #cc95c0 25%,
+        #dbd4b4 0,
+        #dbd4b4 50%,
+        #cc95c0 0,
+        #cc95c0 75%,
+        #dbd4b4 0
+      );
+      background-size: 10px 10px;
+
+   
+   
+}
+
+.bgimg{
+    background-image: url(./img/img_services.jpg);
+    width: 80%;
+    height: 500px;
+    background-repeat: none;
+    margin-left: 10%;
+    padding-top: 10%;
+
+
+}
+
+.bgimg h1{
+    background: black;
+    color: white;
+    text-align: center;
+    
+}
+
+.bgimg p{
+    margin:0 5%;
+    font-size: 2rem;
+}
