@@ -1,0 +1,103 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+h2 {
+  text-align: center;
+  color: aqua;
+}
+
+.navbar {
+  display: flex;
+  background-color: #555;
+  height: 70px;
+  justify-content: space-between;
+}
+
+img {
+  margin-left: 10px;
+  width: 100px;
+}
+
+.icon-bar {
+  width: 25%;
+  display: flex;
+}
+
+.icon-bar a {
+  width: 25%;
+  text-align: center;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+.personInfo {
+  position: relative;
+}
+
+.loginContainer {
+  display: none;
+  width: 200px;
+  height: 350px;
+  border: 5px solid red;
+  position: absolute;
+  right: 70px;
+  top: 70px;
+  background-color: aqua;
+}
+
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+}
+#fruitsbox {
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-column-gap: 10%;
+  grid-row-gap: 1%;
+  width: 100%;
+}
+
+#fruitsbox ul {
+  border: 5px solid green;
+  width: 100%;
+  padding: 1rem;
+}
+
+li {
+  font-size: 20px;
+}
+
+.panier {
+  display: none;
+  border: 5px solid green;
+  width: 30%;
+}
+
+.panierbox {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-left: 0;
+}
+
+.panierbox li {
+  border: 1px solid black;
+}

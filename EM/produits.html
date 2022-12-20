@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      button {
+        border: 3px solid black;
+        background-color: green;
+        color: white;
+        padding: 10px;
+      }
+
+      button:hover {
+        border: 3px solid blue;
+      }
+
+      .produit {
+        text-align: center;
+        width: 48%;
+        padding: 3px;
+      }
+
+      .modal {
+        display: none;
+        position: absolute;
+        padding: 10px;
+        top: 10px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        border: 3px solid black;
+       background-color: aqua;
+        width: 80%;
+      }
+
+      .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #634848;
+      }
+
+      .menu li {
+        float: left;
+      }
+
+      .menu li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .menu li a:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header
+      class="flex"
+      style="background-color: #634848; justify-content: space-between"
+    >
+      <img src="https://picsum.photos/200/30" />
+      <nav class="menu">
+        <ul></ul>
+      </nav>
+    </header>
+
+
+    <main class="flex">
+      <section style="width: 70%">
+        <h2>Produits</h2>
+        <hr />
+        <div class="flex flex-wrap listeProduits"></div>
+      </section>
+      <section class="panier" style="width: 30%">
+        <h2>Panier</h2>
+        <hr />
+        <div class="listePanier"></div>
+        <hr />
+        <b>Prix : <span class="prixTotal"></span> €</b>
+        <br />
+        <button onclick="payer('panier')">Payer</button>
+      </section>
+    </main>
+
+    <!-- modal payer-->
+    <div class="modal payer">
+      <div class="modalContent"></div>
+      <hr />
+      <div style="text-align: right">
+        <button
+          onclick="payer('confirmer','.payer')"
+          style="background-color: red"
+        >
+          Confirmer</button
+        ><button onclick="modal('close','.payer')">Annuler</button>
+      </div>
+    </div>
+
+    <!-- modal inscription-->
+    <div class="modal inscription">
+      <div class="modalContent">
+        <h2>inscription</h2>
+        <form>
+          Nom : <input type="text" name="nom" id="nom" /><br />
+          Prenom : <input type="text" name="prenom" id="prenom" /><br />
+          ville : <select class="ville" onclick="ville()"></select> <br>
+          Email : <input type="email" name="email" id="email" /><br />
+          Mdp : <input type="password" name="mdp" id="mdp" /><br />
+        </form>
+      </div>
+      <hr />
+      <div style="text-align: right">
+        <button>S'inscrit</button
+        ><button
+          onclick="modal('close','.inscription')"
+          style="background-color: red"
+        >
+          Annuler
+        </button>
+      </div>
+    </div>
+
+    <!-- modal authentification -->
+    <div class="modal authentification">
+      <div class="modalContent">
+        <h2>authentification</h2>
+        <form>
+          Email : <input type="email" name="email" id="email" /><br />
+          Mdp : <input type="password" name="mdp" id="mdp" /><br />
+          menu : <select name="" class="menuBgColor" onclick="menuChangeBgColor()"></select>
+        </form>
+      </div>
+      <hr />
+      <div style="text-align: right">
+        <button>Login</button
+        ><button
+          onclick="modal('close','.authentification')"
+          style="background-color: red"
+        >
+          Annuler
+        </button>
+        <button onclick="changeColor()">change color</button>
+      </div>
+    </div>
+
+    <!-- modal blabla -->
+    <div class="modal blabla">
+      <p>blabala</p>
+      <button onclick="modal('close','.blabla')">Fermer</button>
+    </div>
+
+    <script src="produits.js"></script>
+  </body>
+</html>

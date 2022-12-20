@@ -14,7 +14,7 @@ function test_can_draw_card(): bool
     $num2 = draw_card();
     $cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'V', 'D', 'R'];
 
-    return in_array($num1, $cards) && in_array($num2, $cards) && $num1 !== $num2;
+    return in_array($num1, $cards) && in_array($num2, $cards);
 }
 
 /**
@@ -54,10 +54,10 @@ function test_can_calculate_card_sum()
  */
 function test_can_guess_winner()
 {
-    $winner1 = guess_winner(19, 18);
-    $winner2 = guess_winner(22, 18, );
-    $winner3 = guess_winner(11, 18);
-    return $winner1 === true && $winner2 === false && $winner3 === false;
+    $bank = guess_winner(17, 21);
+    $addictedPlayer = guess_winner(20, 14);
+    $bankOut = guess_winner(14, 22);
+    return $bank === false && $addictedPlayer === true && $bankOut === true;
 }
 
 $koString = "\033[31m❌\033[0m\n";

@@ -41,9 +41,12 @@ $sumBankValue = calculate_card_sum($drawBankCard1, $drawBankCard2);
 
 
 /*comparer les value entre le play and le bank pour savoir qui sera gagner */
-function guess_winner($userScore, $bankScore,)
+function guess_winner($userScore, $bankScore)
+
+
+
 {
-    // if ($userScore < 17) {
+    // if ($bankScore < 17) {
     //     $userScore = $userScore + $playerCard3;
     //     $bankScore = $bankScore + $bankCard3;
     // };
